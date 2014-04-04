@@ -13,3 +13,6 @@
     * [xCode Configuration](provisioning/xcodeconfig.md)
     * [How was the app signed?](provisioning/howsigned.md)
     * [Creating a Developer Certificate](provisioning/creatingcertificate.md)
+* [Products and Solutions using Crypthology](solution/README.md)
+    * [BoxCryptor](solution/boxcryptor.md)
+    * [Bitcoin](solution/bitcoin.md)
