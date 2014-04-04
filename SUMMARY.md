@@ -2,7 +2,11 @@
 
 * [Theory and Terminology](theory/README.md)
     * [Hashes](theory/hashes.md)
-    * [Certificate](theory/certificate.md)    
+    * [Certificate](theory/certificate.md)  
+    * [Algorithm Strength](theory/strength.md)
+* [Usage](usage/README.md)
+	* [Key Distribution](usage/keydistribution.md)
+	* [OpenSSL](usage/openssl.md)	
 * [iOS Provisioning Profile](provisioning/README.md)
     * [Why do we need a Provisiong Profile](provisioning/why.md)
     * [Looking inside the Profile](provisioning/lookinside.md)
