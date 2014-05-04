@@ -26,5 +26,51 @@ A transaction consists of mutliple input and output addresses. One thing which i
 
 The transactions form an acyclic graph. The amount of bitcoins at a particular address is never explicitly recorded in the system. To figure out the balance on a particular address you have to look at all the transactions going into an address and out of it and add and substract to get the present balance.
 
+# Ramblings about how a Transaction is setup and works
+
+Using the bitcoin client
+
+    $ bitcoind createrawtransaction
+    '[{"txid" : "9ca8f",
+       "vout" : 0}]'
+       
+     '{"1Lnf" : 0.0250},
+      {"1hvz" : 0.0245}'
+     0100...1e34a...
+     
+This is a compressed form of what is in a transaction. The first argument to `createrawtransaction` is a JSON array of the inputs. For each input we have:
+
+* **txid** the ID of the previous transaction.
+* **void** which output from previous output is this input. 
+
+So each output is assigned an index. 
+
+The second argument, gives us a dictionary with key-values, where each key is a address to send bitcoins to. The value of the key is the amount to send. When you hit enter you get `0100...1e34a...` which is the whole transaction encoded in binary format (raw format). You can decode this to see all the info in the transaction which gets derived from what you write.
+
+Most notable the decoded transaction will contain:
+
+* An assigned transaction ID for this transaction. I believe this is a hash of most of the transaction data.
+* The transaction script. Our input didn't specify any scripts all it said was to send some amount to given addresses. But the scripts give conditions for this to happen. The addresses are part of the script.
+
+Before you can send transaction you need to sign it. Otherwise you have no proof that you are allowed to do this. 
+
+	$ bitcoind walletpassphrase mypasswd 360
+	
+Unlocks your walled using passord  `mypasswd`.
+
+	$ bitcoind signrawtransaction 0100...1e34a...
+	{
+		"hex" : 0100...1e3b3..
+		"complete" : true
+	}
+
+The `hex` key contains the whole transaction encoded in binary with the new signature data added. You can decode this again with `bitcoind decoderawtransaction` to see how the transaction was changed. All the inputs will now contain a `scriptSig` which contains the signature along with the input script. This makes the transaction verifiable by others.
+
+You can now send it with:
+
+	$ bitcoind sendrawtransaction  0100...1e3b3..
+	
+
+
 
 [bitcoinwhite]: https://bitcoin.org/bitcoin.pdf
