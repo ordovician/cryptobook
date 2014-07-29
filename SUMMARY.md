@@ -16,3 +16,4 @@
 * [Products and Solutions using Crypthology](solution/README.md)
     * [BoxCryptor](solution/boxcryptor.md)
     * [Bitcoin](solution/bitcoin.md)
+    * [Ripple](solution/ripple.md)    

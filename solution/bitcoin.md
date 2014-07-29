@@ -41,7 +41,7 @@ Using the bitcoin client
 This is a compressed form of what is in a transaction. The first argument to `createrawtransaction` is a JSON array of the inputs. For each input we have:
 
 * **txid** the ID of the previous transaction.
-* **void** which output from previous output is this input. 
+* **vout** which output from previous output is this input. 
 
 So each output is assigned an index. 
 
