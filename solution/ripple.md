@@ -87,7 +87,8 @@ Somone exposed to risk (person or company). E.g. the person lending money.
 Risk that borrower will not pay owed money. E.g. a Ripple Exchange or bank essentially borrows the money which you have on your account. The amount on your account is a statement of a IOU. 
 
 ### Money
-Medium of exchange. Or if we have the debt view of money they money is a IOU token of some form. It could also be related to a measure of value. 
+Medium of exchange. Or if we have the debt view of money they money is a IOU token of some form. Or to put it in another way money is a measurement of value or unit of account (how we measure values of things in our accounts). Money can be represented by **currency**: banknotes and coins or **bank money**: balance held in checkings or savings account.
+
 
 ### Arbitrage
 Taking advantage of difference in market prices.
